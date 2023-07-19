@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+        integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+        crossorigin="anonymous"></script>
+<!-- <script src="jquery.translate.js"></script> -->
+
+</head>
+    <body>
+        <h2 class="trn">Hello World</h2>
+        <h2 class="trn" data-trn-key="hello">Hello World</h2>
+        <script>
+
+        var local = {
+            "Hello World": {
+            fr: "Bonjour le monde",
+            cn: "你好世界"
+            },
+            hello: {
+            en: "Hello World",  
+            fr: "Bonjour le monde",
+            cn: "你好世界"
+            }
+        };
+            var translator = $('body').translate({
+            lang: "hi", 
+            t: local
+        });
+        </script>
+
+        <script>
+            // FR
+            translator.lang("fr");
+            // CN
+            translator.lang("cn");
+        </script>
+</body>
+</html> 
