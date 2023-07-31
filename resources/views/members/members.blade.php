@@ -54,7 +54,7 @@
                                         </td>
                                         <td style="width: 100px; border: 1px solid #000;">
                                             <div class="text-center">
-                                                <img src="{{ asset('storage/'.$member->img) }}" style="width: 100px; height: 100px;" alt="">
+                                                <img src="{{ asset('images/'.$member->img) }}" style="width: 100px; height: 100px;" alt="">
                                             </div>
                                         </td>
                                     </tr>

@@ -49,14 +49,18 @@ class MemberController extends Controller
             $member->booth_id = $request->booth_id;
 
             if($request->hasFile('img')){
-                $random = Str::random(15);
-                $imgName = $random.'.'.$request->img->extension();
-                $member->img = $request->img->storeAs('member-img', $imgName, 'public');
+                // $random = Str::random(15);
+                // $imgName = $random.'.'.$request->img->extension();
+                // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
+                $fileName = time() . '.' . $request->img->extension();
+                $request->img->move(public_path('images'), $fileName);
             }
+            
             $member->phone = $request->phone;
 
             $member->name = $name;
             $member->village = $village;
+            $member->img = $fileName;
 
             $booth = Booth::where('id', $request->booth_id)->first();
             $member->booth_name = $booth->name;
@@ -86,7 +90,7 @@ class MemberController extends Controller
         if($request->hasFile('img')){
             $random = Str::random(15);
             $imgName = $random.'.'.$request->img->extension();
-            $member->img = env('BASE_URL').$request->img->storeAs('member-img', $imgName, 'public');
+            $member->img = $request->img->storeAs('member-img', $imgName, 'public');
         }
         $member->phone = $request->phone;
         $village = GoogleTranslate::trans($request->village, 'hi', 'en');
