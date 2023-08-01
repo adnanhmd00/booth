@@ -52,7 +52,8 @@ class MemberController extends Controller
                 // $random = Str::random(15);
                 // $imgName = $random.'.'.$request->img->extension();
                 // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
-                $fileName = time() . '.' . $request->img->extension();
+                $random = Str::random(10);
+                $fileName = $random . '.' . $request->img->extension();
                 $request->img->move(public_path('images'), $fileName);
             }
             
@@ -91,7 +92,9 @@ class MemberController extends Controller
             // $random = Str::random(15);
             // $imgName = $random.'.'.$request->img->extension();
             // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
-            $fileName = time() . '.' . $request->img->extension();
+
+            $random = Str::random(10);
+            $fileName = $random . '.' . $request->img->extension();
             $request->img->move(public_path('images'), $fileName);
         }
         $member->phone = $request->phone;
