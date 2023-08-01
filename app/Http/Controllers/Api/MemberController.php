@@ -88,9 +88,11 @@ class MemberController extends Controller
         $name = GoogleTranslate::trans($request->name, 'hi', 'en');
         $member->name = $name;
         if($request->hasFile('img')){
-            $random = Str::random(15);
-            $imgName = $random.'.'.$request->img->extension();
-            $member->img = $request->img->storeAs('member-img', $imgName, 'public');
+            // $random = Str::random(15);
+            // $imgName = $random.'.'.$request->img->extension();
+            // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
+            $fileName = time() . '.' . $request->img->extension();
+            $request->img->move(public_path('images'), $fileName);
         }
         $member->phone = $request->phone;
         $village = GoogleTranslate::trans($request->village, 'hi', 'en');
