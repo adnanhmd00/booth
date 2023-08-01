@@ -100,6 +100,7 @@ class MemberController extends Controller
         $member->phone = $request->phone;
         $village = GoogleTranslate::trans($request->village, 'hi', 'en');
         $member->village = $village;
+        $member->img = $fileName;
         if($member->save()){
             return response()->json([
                 'data' => $member,
