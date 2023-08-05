@@ -24,7 +24,7 @@
                         <tr>
                             <td style="width: 100px; background: #ddd; border: 1px solid #000"><img src="{{ asset('assets/img/meena.jpeg') }}" style="width: 96px; height: 100px;" alt=""></td>
                             <td colspan="2" style="width: 100%; background: #ddd; border: 1px solid #000; border-left: 1px solid #000;"><h2 class="text-center">टोडाभीम <br>विधान सभा क्षेत्र (संख्या-81)</h2></td>
-                            <td style="width: 100px; background: #fff; border: 1px solid #000"><img src="{{ asset('assets/img/flag.svg') }}" style="width: 96px; height: 100px;">
+                            <td style="width: 100px; background: #fff; border: 1px solid #000"><img src="{{ asset('assets/img/todabheem-map.jpeg') }}" style="width: 96px; height: 100px;">
                         <tr style="border: 1px solid #000;">
                             <td style="width: 100px; background: #6bbdfa;"></td>
                             <td colspan="2" style="width: 100%; background: #6bbdfa; color: #eee;"><p class="text-center mt-1"><b>पोलिंग बूथ कार्यकर्ता विवरण</b></p></td>
