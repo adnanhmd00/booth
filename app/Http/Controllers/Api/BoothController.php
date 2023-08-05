@@ -13,7 +13,7 @@ class BoothController extends Controller
         $booths = Booth::where('status', 1)->get(['id', 'name', 'center']);
         $arr = [];
         foreach($booths as $booth){
-            $bth = array('id' => $booth->id, 'searcheable name' => $booth->id .' '. $booth->name, 'name' => $booth->name, 'center' => $booth->center);
+            $bth = array('id' => $booth->id, 'searcheable name' => $booth->id .' '. $booth->name, 'name' => $booth->id .' '. $booth->name, 'center' => $booth->center);
             $members = Member::where('booth_id', $booth->id)->get();
             $count = count($members);
             $bth['members'] = $count;
