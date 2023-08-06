@@ -93,7 +93,7 @@
                                             <td>{{ $member->phone }}</td>
                                             <td>{{ $member->village }}</td>
                                             <td><img src="{{ asset('images/'.$member->img) }}" class="img-fluid rounded border" style="height: 100px; width: 100px;"></td>
-                                            <td><a href="{{ route('member.edit', $member->id) }}" class="btn btn-primary">Update Member</a></td>
+                                            <td><a href="{{ route('member.edit', $member->id) }}" class="btn btn-primary">अपडेट करें</a></td>
                                         </tr>
                                         @endforeach
                                     </tbody>
