@@ -34,7 +34,7 @@
                         <div class="app-brand justify-content-center">
                             <a href="index.html" class="app-brand-link gap-2">
                                 <span class="app-brand-logo demo">
-                                    <img src="{{ asset('assets/img/login-page.jpeg') }}" style="width: 100px;"
+                                    <img src="{{ asset('assets/img/meena.jpeg') }}" style="width: 100px;"
                                         alt="">
                                 </span>
                             </a>
