@@ -61,7 +61,7 @@ class MemberController extends Controller
 
             $member->name = $name;
             $member->village = $village;
-            $member->img = $fileName;
+            $member->img = isset($fileName) ? $fileName : '';
 
             $booth = Booth::where('id', $request->booth_id)->first();
             $member->booth_name = $booth->name;
@@ -100,7 +100,7 @@ class MemberController extends Controller
         $member->phone = $request->phone;
         $village = GoogleTranslate::trans($request->village, 'hi', 'en');
         $member->village = $village;
-        $member->img = $fileName;
+        $member->img = isset($fileName) ? $fileName : '';
         if($member->save()){
             return response()->json([
                 'data' => $member,
