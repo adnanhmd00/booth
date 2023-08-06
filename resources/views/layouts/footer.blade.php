@@ -26,7 +26,7 @@
  {{-- <script src="{{ asset('assets/js/form-basic-inputs.js') }}"></script> --}}
  <script async defer src="https://buttons.github.io/buttons.js"></script>
 
- 
+
  <script>
   $(document).ready(function() {
       $('#admin').DataTable({

@@ -57,9 +57,8 @@ class MemberController extends Controller
                 $request->img->move(public_path('images'), $fileName);
             }
             
-            $member->phone = $request->phone;
-
             $member->name = $name;
+            $member->phone = $request->phone;
             $member->village = $village;
             $member->img = isset($fileName) ? $fileName : '';
 
@@ -100,7 +99,7 @@ class MemberController extends Controller
         $member->phone = $request->phone;
         $village = GoogleTranslate::trans($request->village, 'hi', 'en');
         $member->village = $village;
-        $member->img = isset($fileName) ? $fileName : '';
+        $member->img = isset($fileName) ? $fileName : $member->img;
         if($member->save()){
             return response()->json([
                 'data' => $member,

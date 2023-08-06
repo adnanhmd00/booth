@@ -23,8 +23,9 @@
                                             <th>#</th>
                                             <th>बूथ का नाम</th>
                                             <th>बूथ केंद्र</th>
-                                            <th>ज़िला</th>
+                                            {{-- <th>ज़िला</th> --}}
                                             <th>विधानसभा</th>
+                                            <th>सदस्य जोड़ें</th>
                                         </tr>
                                     </thead>
                                     <tbody class="table-border-bottom-0">
@@ -34,8 +35,16 @@
                                         <td>{{ $i++ }}</td>
                                         <td>{{ $booth->name }}</td>
                                         <td>{{ $booth->center }}</td>
-                                        <td>{{ $booth->district }}</td>
+                                        {{-- <td>{{ $booth->district }}</td> --}}
                                         <td>{{ $booth->assembly }}</td>
+                                        {{-- <td>
+                                            <form method="POST" action="{{ route('member.create') }}">
+                                                @csrf
+                                                <input type="hidden" name="booth_id" value="{{ $booth->id }}">
+                                                <button class="btn btn-primary">सदस्य जोड़ें</button>
+                                            </form>
+                                        </td> --}}
+                                        <td><a href="{{ route('member.create', $booth->id) }}" class="btn btn-primary">सदस्य जोड़ें</a></td>
                                     </tr>
                                        @endforeach
                                     </tbody>

@@ -34,5 +34,11 @@
                 <div data-i18n="Boxicons">Add Assembly <br> (विधानसभा जोड़ें)</div>
             </a>
         </li>
+        {{-- <li class="menu-item">
+            <a href="{{ route('member.create') }}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-checkbox-square"></i>
+                <div data-i18n="Boxicons">Add Mmebers <br> (सदस्य जोड़ें)</div>
+            </a>
+        </li> --}}
     </ul>
 </aside>

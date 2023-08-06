@@ -28,8 +28,10 @@ Route::post('translate-name', [BoothController::class, 'translateName'])->name('
 Route::post('translate-center', [BoothController::class, 'translateCenter'])->name('translate-center');
 
 Route::get('/members', [MemberController::class, 'index'])->name('members');
-Route::get('/add-member', [MemberController::class, 'create'])->name('member.create');
-Route::post('/add-member', [MemberController::class, 'index'])->name('member.store');
+Route::get('/add-member/{id}', [MemberController::class, 'create'])->name('member.create');
+Route::post('/store-member/{id}', [MemberController::class, 'store'])->name('member.store');
+Route::get('/edit-member/{id}', [MemberController::class, 'edit'])->name('member.edit');
+Route::post('/update-member/{id}', [MemberController::class, 'update'])->name('member.update');
 
 Route::get('/assembly', [AssemblyController::class, 'index'])->name('assembly');
 Route::post('/add-assembly', [AssemblyController::class, 'store'])->name('assembly.store');
