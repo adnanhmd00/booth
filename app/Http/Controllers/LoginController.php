@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class LoginController extends Controller
 {
@@ -17,13 +18,15 @@ class LoginController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-        $fieldType = filter_var($request->email, FILTER_VALIDATE_EMAIL) ? 'email' : 'username';
-        if(Auth::guard('admin')->attempt(array($fieldType => $input['email'], 'password' => $input['password'])))
-        {
+        $credentials = [
+            'email' => $request['email'],
+            'password' => $request['password'],
+        ];
+        $fieldType = filter_var($request->email);
+        if (Auth::attempt($credentials)) {
             return redirect()->route('dashboard');
         }else{
-            return redirect()->route('admin.login')
-                ->with('error','Email-Address And Password Are Wrong.');
+            return back();
         }
     }
     
