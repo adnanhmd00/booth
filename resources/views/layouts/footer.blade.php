@@ -1,14 +1,26 @@
- <footer class="content-footer footer bg-footer-theme hidden-print">
-     <div class="container-xxl d-flex flex-wrap justify-content-end py-2 flex-md-row flex-column">
-         <div class="mb-2 mb-md-0">
-             ©
-             <script>
-                 document.write(new Date().getFullYear());
-             </script>
-             , made with ❤️ by
-             <a href="https://geekcoders.in" target="_blank" class="footer-link fw-bolder">Geek Coders</a>
-         </div>
-     </div>
+ <footer class="content-footer footer bg-footer-theme">
+     
+
+     <div class="d-flex justify-content-center">
+        <div class="mb-2 mb-md-0">
+           ©
+           <script>
+               document.write(new Date().getFullYear());
+           </script>
+           , All Right Reserved by
+           <a href="javascript:void(0)" target="_blank" class="footer-link fw-bolder">Amrita Meena</a>
+       </div>
+    </div>
+    <div class="container-xxl d-flex flex-wrap justify-content-end py-2 flex-md-row flex-column">
+        <div class="mb-2 mb-md-0 hidden-print">
+            ©
+            <script>
+                document.write(new Date().getFullYear());
+            </script>
+            , made with ❤️ by
+            <a href="https://geekcoders.in" target="_blank" class="footer-link fw-bolder">Geek Coders</a>
+        </div>
+    </div>
  </footer>
  <div class="content-backdrop fade"></div>
  </div>
