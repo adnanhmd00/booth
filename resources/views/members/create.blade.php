@@ -49,12 +49,12 @@
                                         <br>
                                         <div class="row">
                                             <div class="col-md-6">
-                                                <label for="img">फोटो</label>
-                                                <input type="file" name="img" id="img" class="form-control">
-                                            </div>
-                                            <div class="col-md-6">
                                                 <label for="village">ग्राम </label>
                                                 <input type="text" name="village" id="village" placeholder="eg: Todabheem" class="form-control" required>
+                                            </div>
+                                            <div class="col-md-6">
+                                                <label for="img">फोटो</label>
+                                                <input type="file" name="img" id="img" class="form-control">
                                             </div>
                                         </div>
                                     </div>
