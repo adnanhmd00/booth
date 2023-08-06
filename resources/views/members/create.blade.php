@@ -46,7 +46,6 @@
                                                 <input type="text" name="phone" id="phone" placeholder="eg: 9145689715" class="form-control" required>
                                             </div>
                                         </div>
-                                        <br>
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="village">ग्राम </label>
