@@ -43,30 +43,40 @@ class MemberController extends Controller
         $count = count($members);
         if($count < 6){
             $member = new Member;
-            $name = GoogleTranslate::trans($request->name, 'hi', 'en');
-            $village = GoogleTranslate::trans($request->village, 'hi', 'en');
+            // $tr = new GoogleTranslate('hi');
+        // $text = $tr->translate($request->name);
+        // if($tr->getLastDetectedSource() != 'hi'){
+        //     $name = GoogleTranslate::trans($request->name, 'hi', 'en');
+        // }else{
+            $name = $request->name;
+        // }
 
+        // $text = $tr->translate($request->village);
+        // if($tr->getLastDetectedSource() != 'hi'){
+        //     $village = GoogleTranslate::trans($request->village, 'hi', 'en');
+        // }else{
+            $village = $request->village;
+        // }
+            
+            
+            $member->name = $name;
+            $member->village = $village;
+            $member->phone = $request->phone;
             $member->booth_id = $request->booth_id;
-
+            
             if($request->hasFile('img')){
-                // $random = Str::random(15);
-                // $imgName = $random.'.'.$request->img->extension();
-                // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
                 $random = Str::random(10);
                 $fileName = $random . '.' . $request->img->extension();
                 $request->img->move(public_path('images'), $fileName);
             }
-            
-            $member->name = $name;
-            $member->phone = $request->phone;
-            $member->village = $village;
             $member->img = isset($fileName) ? $fileName : '';
-
+            
             $booth = Booth::where('id', $request->booth_id)->first();
             $member->booth_name = $booth->name;
             $member->booth_center = $booth->center;
             $member->booth_district = $booth->district;
             $member->booth_assembly = $booth->assembly;
+
             if($member->save()){
                 return response()->json([
                     'data' => $member,
@@ -85,21 +95,34 @@ class MemberController extends Controller
     public function updateMember(Request $request, $id){
         $member = Member::findOrFail($id);
         $member->booth_id = $request->booth_id;
-        $name = GoogleTranslate::trans($request->name, 'hi', 'en');
-        $member->name = $name;
-        if($request->hasFile('img')){
-            // $random = Str::random(15);
-            // $imgName = $random.'.'.$request->img->extension();
-            // $member->img = $request->img->storeAs('member-img', $imgName, 'public');
 
+        // $tr = new GoogleTranslate('hi');
+        // $text = $tr->translate($request->name);
+        // if($tr->getLastDetectedSource() != 'hi'){
+        //     $name = GoogleTranslate::trans($request->name, 'hi', 'en');
+        // }else{
+            $name = $request->name;
+        // }
+
+        // $text = $tr->translate($request->village);
+        // if($tr->getLastDetectedSource() != 'hi'){
+        //     $village = GoogleTranslate::trans($request->village, 'hi', 'en');
+        // }else{
+            $village = $request->village;
+        // }
+        
+        
+        $member->name = $name;
+        $member->village = $village;
+        $member->phone = $request->phone;
+
+        if($request->hasFile('img')){
             $random = Str::random(10);
             $fileName = $random . '.' . $request->img->extension();
             $request->img->move(public_path('images'), $fileName);
         }
-        $member->phone = $request->phone;
-        $village = GoogleTranslate::trans($request->village, 'hi', 'en');
-        $member->village = $village;
         $member->img = isset($fileName) ? $fileName : $member->img;
+
         if($member->save()){
             return response()->json([
                 'data' => $member,
