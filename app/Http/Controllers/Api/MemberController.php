@@ -43,22 +43,22 @@ class MemberController extends Controller
         $count = count($members);
         if($count < 6){
             $member = new Member;
-            // $tr = new GoogleTranslate('hi');
-        // $text = $tr->translate($request->name);
-        // if($tr->getLastDetectedSource() != 'hi'){
-        //     $name = GoogleTranslate::trans($request->name, 'hi', 'en');
-        // }else{
-            $name = $request->name;
-        // }
+            $tr = new GoogleTranslate('hi');
+            $text = $tr->translate($request->name);
+            if($tr->getLastDetectedSource() != 'hi'){
+                $name = GoogleTranslate::trans($request->name, 'hi', 'en');
+            }else{
+                $name = $request->name;
+            }
 
-        // $text = $tr->translate($request->village);
-        // if($tr->getLastDetectedSource() != 'hi'){
-        //     $village = GoogleTranslate::trans($request->village, 'hi', 'en');
-        // }else{
-            $village = $request->village;
-        // }
-            
-            
+            $text = $tr->translate($request->village);
+            if($tr->getLastDetectedSource() != 'hi'){
+                $village = GoogleTranslate::trans($request->village, 'hi', 'en');
+            }else{
+                $village = $request->village;
+            }
+                
+                
             $member->name = $name;
             $member->village = $village;
             $member->phone = $request->phone;
@@ -96,20 +96,20 @@ class MemberController extends Controller
         $member = Member::findOrFail($id);
         $member->booth_id = $request->booth_id;
 
-        // $tr = new GoogleTranslate('hi');
-        // $text = $tr->translate($request->name);
-        // if($tr->getLastDetectedSource() != 'hi'){
-        //     $name = GoogleTranslate::trans($request->name, 'hi', 'en');
-        // }else{
+        $tr = new GoogleTranslate('hi');
+        $text = $tr->translate($request->name);
+        if($tr->getLastDetectedSource() != 'hi'){
+            $name = GoogleTranslate::trans($request->name, 'hi', 'en');
+        }else{
             $name = $request->name;
-        // }
+        }
 
-        // $text = $tr->translate($request->village);
-        // if($tr->getLastDetectedSource() != 'hi'){
-        //     $village = GoogleTranslate::trans($request->village, 'hi', 'en');
-        // }else{
+        $text = $tr->translate($request->village);
+        if($tr->getLastDetectedSource() != 'hi'){
+            $village = GoogleTranslate::trans($request->village, 'hi', 'en');
+        }else{
             $village = $request->village;
-        // }
+        }
         
         
         $member->name = $name;
